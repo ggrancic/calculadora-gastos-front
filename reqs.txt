@@ -20,11 +20,3 @@ UI
 - Seccion de resumen
 - CSS aparte del index, en su propia carpeta
 
-
-
-Desvarios mios:
-- Promedio en total = suma de los montos / cantidad de elementos (o gastos)
-- CRUD trucho para categorias
-- CRUD trucho para gastos -> poner nombre, catego (combobox), fecha y monto.
-- Para dar de alta un producto o una categoria podriamos usar un modal como dice en https://www.w3schools.com/howto/howto_css_modals.asp
-

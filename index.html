@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js" defer></script>
+  <title>Calculadora de gasto</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de Gastos</h1>
+    <button type="button" id="btnPresupuesto">Crear presupuesto</button>
+    <div id="addBtns">
+      <button type="button" id="btnAddGasto" disabled>Agregar Gasto</button>
+    </div>
+    <table>
+      <th>Fecha</th>
+      <th>Descripcion</th>
+      <th>Categoria</th>
+      <th>Monto</th>
+    </table>
+
+
+    <div id="resumen">
+      <h3>Resumen</h3>
+      <ul>
+        <li>
+          <span>Presupuesto</span>
+          <span id="lblPresupuesto">$1500</span>
+        </li>
+        <li>
+          <span>Total gastado</span>
+          <span>$5000</span>
+        </li>
+        <li>
+          <span>Promedio</span>
+          <span>$4400</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
