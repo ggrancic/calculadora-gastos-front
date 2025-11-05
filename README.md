@@ -22,5 +22,4 @@
 
 
 
-![Under construction](<img width="237" height="213" alt="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-PrIZ1jLPfKDXi4jF9u47nnLuOZJzSsN_Zw&s" />
-)
+![Under construction](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-PrIZ1jLPfKDXi4jF9u47nnLuOZJzSsN_Zw&s)
