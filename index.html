@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
   <title>Calculadora de gasto</title>
 </head>
 <body>
@@ -11,7 +12,7 @@
     <h1>Calculadora de Gastos</h1>
     <button type="button" id="btnPresupuesto">Crear presupuesto</button>
     <div id="addBtns">
-      <button type="button" id="btnAddGasto" disabled>Agregar Gasto</button>
+      <button type="button" id="btnGasto" disabled>Agregar Gasto</button>
     </div>
     <table>
       <th>Fecha</th>
@@ -26,7 +27,7 @@
       <ul>
         <li>
           <span>Presupuesto</span>
-          <span id="lblPresupuesto">$1500</span>
+          <span id="lblPresupuesto"></span>
         </li>
         <li>
           <span>Total gastado</span>
@@ -38,6 +39,29 @@
         </li>
       </ul>
     </div>
+
   </div>
+
+
+  <div id="myModal" class="modal">
+
+    <div class="modal-content">
+
+      <div id="modal-header">
+        <span class="close">&times;</span>
+      </div>
+
+      <div id="modal-body">
+        <label for="expenseDate">Fecha</label>
+        <input type="date" id="expenseDate">
+
+        <label for="expenseDescription">Descripcion</label>
+        <input type="text" id="expenseDescription" required minlength="2" maxlength="20">
+      </div>
+
+    </div>
+
+  </div>
+
 </body>
 </html>

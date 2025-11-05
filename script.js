@@ -1,18 +1,26 @@
 const btnPresupuesto = document.querySelector('#btnPresupuesto');
-const btnAddGasto = document.querySelector('#btnAddGasto');
+const btnGasto = document.querySelector('#btnGasto');
 const lblPres = document.querySelector('#lblPresupuesto')
+
+const modal = document.querySelector('#myModal');
+const closeBtn = document.querySelector('.close');
+
 
 let presupuesto;
 
-btnPresupuesto.addEventListener('click', (event) => {
+btnPresupuesto.addEventListener('click', () => {
 
-  event.stopPropagation();
-
-  presupuesto = parseFloat(prompt("Ingresa el presupuesto"));
-  console.log(presupuesto);
+  presupuesto = parseFloat(prompt('Ingresa el presupuesto'));
   lblPres.textContent = `$${presupuesto}`;
-
-  btnAddGasto.disabled = false;
+  btnGasto.disabled = false;
   btnPresupuesto.disabled = true;
 
+});
+
+btnGasto.addEventListener('click', () => {
+  modal.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
 });
