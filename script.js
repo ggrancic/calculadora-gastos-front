@@ -61,6 +61,7 @@ budgetModal.addEventListener('submit', (event) => {
   event.preventDefault();
   const budgetAmt = document.querySelector('#budgetAmt');
   presupuesto = budgetAmt.value;
+  lblPres.textContent = `$${presupuesto}`;
 
 })
 
