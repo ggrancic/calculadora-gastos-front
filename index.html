@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Calculadora de gasto</title>
 </head>
+
 <body>
   <div class="container">
     <h1>Calculadora de Gastos</h1>
@@ -41,74 +43,63 @@
     </div>
 
   </div>
-  
+
   <div id="budgetModal" class="modal">
-    <div class="modal-content">
-      <form action="" id="budgetForm">
-        
-        <div id="modal-header">
-          <span class="close">&times;</span>
-          <h2>Ingresa el presupuesto máximo</h2>
-        </div>
-
-        <div id="modal-body">
-          <label for="budgetAmt">Monto</label>
-          <input type="text" name="budgetAmt" id="budgetAmt">
-        </div>
-
-          <div id="modal-footer">
-            <button type="submit" class="modalBtn" id="saveBtn">Guardar</button>
-            <button type="button" class="modalBtn" id="cancelBtn">No Guardar</button>
-          </div>
-
+    <form action="" id="budgetForm" class="modal-content">
+      <div id="modal-header">
+        <span class="close">&times;</span>
+        <h2>Ingresa el presupuesto máximo</h2>
       </div>
 
-    </div>
+      <div id="modal-body">
+        <label for="budgetAmt">Monto</label>
+        <input type="text" name="budgetAmt" id="budgetAmt">
+      </div>
 
-  </form>
+      <div id="modal-footer">
+        <button type="submit" class="modalBtn" id="saveBtn">Guardar</button>
+        <button type="button" class="modalBtn" id="cancelBtn">No Guardar</button>
+      </div>
+    </form>
+  </div>
 
   <div id="expensesModal" class="modal">
+    <form action="" id="expenseForm" class="modal-content">
 
-    <div class="modal-content">
-  
-      <form action="" id="expenseForm">
       <div id="modal-header">
         <span class="close">&times;</span>
         <h2>Nuevo Gasto</h2>
       </div>
 
       <div id="modal-body">
-          <label for="expenseDate">Fecha</label>
-          <input type="date" id="expenseDate" required>
+        <label for="expenseDate">Fecha</label>
+        <input type="date" id="expenseDate" required>
 
-          <label for="expenseDescription">Descripcion</label>
-          <input type="text" id="expenseDescription" minlength="2" maxlength="20" placeholder="Ej: pagar luz, delivery, etc." required>
+        <label for="expenseDescription">Descripcion</label>
+        <input type="text" id="expenseDescription" minlength="2" maxlength="20"
+          placeholder="Ej: pagar luz, delivery, etc." required>
 
-          <label for="expenseCategory">Categoria</label>
+        <label for="expenseCategory">Categoria</label>
 
-          <select id="combo" required>
-            <option value="">--Selecciona la categoria--</option>
-            <option value="transporte">Transporte</option>
-            <option value="expensas">Expensas</option>
-            <option value="comida">Comida</option>
-            <option value="otros">Otros</option>
-          </select>
+        <select id="combo" required>
+          <option value="">--Selecciona la categoria--</option>
+          <option value="transporte">Transporte</option>
+          <option value="expensas">Expensas</option>
+          <option value="comida">Comida</option>
+          <option value="otros">Otros</option>
+        </select>
 
-          <label for="expenseAmt">Monto</label>
-          <input type="number" id="expenseAmt" min="1" placeholder="$0.00" required>
+        <label for="expenseAmt">Monto</label>
+        <input type="number" id="expenseAmt" min="1" placeholder="$0.00" required>
 
-          <div id="modal-footer">
-            <button type="submit" class="modalBtn" id="saveBtn">Guardar</button>
-            <button type="button" class="modalBtn" id="cancelBtn">No Guardar</button>
-          </div>
-
-        </form>
-
+        <div id="modal-footer">
+          <button type="submit" class="modalBtn" id="saveBtn">Guardar</button>
+          <button type="button" class="modalBtn" id="cancelBtn">No Guardar</button>
+        </div>
       </div>
-
-    </div>
-
+    </form>
   </div>
 
 </body>
+
 </html>

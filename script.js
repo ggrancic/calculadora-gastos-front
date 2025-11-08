@@ -13,7 +13,6 @@ const budgetModal = document.querySelector('#budgetModal');
 
 const anyModal = document.querySelector('.modal');
 
-
 const closeBtn = document.querySelector('.close');
 
 const cancelBtn = document.querySelector('#cancelBtn');
@@ -64,6 +63,8 @@ budgetForm.addEventListener('submit', (event) => {
   presupuesto = budgetAmt.value;
   lblPres.textContent = `$${presupuesto}`;
   anyModal.style.display = 'none';
+  btnPresupuesto.disabled = true;
+  btnGasto.disabled = false;
 })
 
 expenseForm.addEventListener('submit', (event) => {
