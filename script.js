@@ -1,9 +1,10 @@
 const btnPresupuesto = document.querySelector('#btnPresupuesto');
 const btnGasto = document.querySelector('#btnGasto');
 
-const expenseForm = document.querySelector('form');
+const expenseForm = document.querySelector('#expenseForm');
+const budgetForm = document.querySelector('#budgetForm');
 
-const lblPres = document.querySelector('#lblPresupuesto')
+const lblPres = document.querySelector('#lblPresupuesto');
 const lblTG = document.querySelector('#lblTG');
 const lblProm = document.querySelector('#lblProm');
 
@@ -57,12 +58,12 @@ cancelBtn.addEventListener('click', () => {
   anyModal.style.display = 'none';
 });
 
-budgetModal.addEventListener('submit', (event) => {
+budgetForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const budgetAmt = document.querySelector('#budgetAmt');
   presupuesto = budgetAmt.value;
   lblPres.textContent = `$${presupuesto}`;
-
+  anyModal.style.display = 'none';
 })
 
 expenseForm.addEventListener('submit', (event) => {
