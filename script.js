@@ -1,25 +1,15 @@
 const btnPresupuesto = document.querySelector('#btnPresupuesto');
 const btnGasto = document.querySelector('#btnGasto');
-
 const expenseForm = document.querySelector('#expenseForm');
 const budgetForm = document.querySelector('#budgetForm');
-
 const lblPres = document.querySelector('#lblPresupuesto');
 const lblTG = document.querySelector('#lblTG');
 const lblProm = document.querySelector('#lblProm');
-
 const expensesModal = document.querySelector('#expensesModal');
 const budgetModal = document.querySelector('#budgetModal');
-
-const anyModal = document.querySelector('.modal');
-
-const closeBtn = document.querySelector('.close');
-
-const cancelBtn = document.querySelector('#cancelBtn');
-const saveBtn = document.querySelector('#saveBtn');
-
 const expensesTable = document.querySelector('table');
-
+const btnCancel = document.querySelector('.cancelBtn');
+const anyModal = document.querySelector('.modal');
 
 let presupuesto = 0;
 let totalGastado = 0;
@@ -41,20 +31,16 @@ function addRow(inData) {
 
 }
 
+btnCancel.addEventListener('click', () => {
+  anyModal.classList.remove('show');
+});
+
 btnPresupuesto.addEventListener('click', () => {
- budgetModal.style.display = 'block';
+  budgetModal.classList.add('show');
 });
 
 btnGasto.addEventListener('click', () => {
-  expensesModal.style.display = 'block';
-});
-
-closeBtn.addEventListener('click', () => {
-  anyModal.style.display = 'none';
-});
-
-cancelBtn.addEventListener('click', () => {
-  anyModal.style.display = 'none';
+  expensesModal.classList.add('show');
 });
 
 budgetForm.addEventListener('submit', (event) => {
@@ -62,10 +48,10 @@ budgetForm.addEventListener('submit', (event) => {
   const budgetAmt = document.querySelector('#budgetAmt');
   presupuesto = budgetAmt.value;
   lblPres.textContent = `$${presupuesto}`;
-  anyModal.style.display = 'none';
   btnPresupuesto.disabled = true;
   btnGasto.disabled = false;
-})
+  budgetModal.classList.remove('show');
+});
 
 expenseForm.addEventListener('submit', (event) => {
 
@@ -98,6 +84,6 @@ expenseForm.addEventListener('submit', (event) => {
   categoryIn.value = '';
   ammountIn.value = '';
 
-  anyModal.style.display = 'none';
+  expensesModal.classList.remove('show');
 
 });

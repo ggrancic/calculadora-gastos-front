@@ -26,6 +26,10 @@ body {
   gap: 20px;
 }
 
+.modal.show {
+  display: block;
+}
+
 #modal-header {
   padding: 2px 16px;
   background-color: #5cb85c;
@@ -65,11 +69,11 @@ body {
   width: 150px;
 }
 
-#saveBtn {
+.saveBtn {
   background-color: #5cb85c;
 }
 
-#cancelBtn {
+.cancelBtn {
   background-color: #f44336;
 }
 
