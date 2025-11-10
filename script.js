@@ -5,7 +5,7 @@ const budgetForm = document.querySelector('#budgetForm');
 const lblPres = document.querySelector('#lblPresupuesto');
 const lblTG = document.querySelector('#lblTG');
 const lblProm = document.querySelector('#lblProm');
-const expensesTable = document.querySelector('table');
+const expensesTable = document.querySelector('tbody');
 const budgetDialog = document.querySelector('#budgetDialog');
 const expensesDialog = document.querySelector('#expensesDialog');
 
@@ -14,6 +14,9 @@ let totalGastado = 0;
 let promedio = 0;
 let expensesQty = 0;
 
+function capitalizeFirstLetter(val) {
+    return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
 
 function addRow(inData) {
 
@@ -21,7 +24,7 @@ function addRow(inData) {
 
   for(prop in inData) {
     const rowData = document.createElement('td');
-    rowData.innerText = inData[prop];
+    rowData.innerText = capitalizeFirstLetter(inData[prop]);
     row.appendChild(rowData);
   }
 
@@ -51,8 +54,11 @@ budgetForm.addEventListener('submit', () => {
 
   presupuesto = budgetAmt.value;
   lblPres.textContent = `$${presupuesto}`;
+  lblPres.style.fontWeight = 'bold';
   btnPresupuesto.disabled = true;
+  btnPresupuesto.classList.add('disabled');
   btnGasto.disabled = false;
+  btnGasto.classList.remove('disabled');
 });
 
 expenseForm.addEventListener('submit', () => {
@@ -73,10 +79,12 @@ expenseForm.addEventListener('submit', () => {
 
   totalGastado += parseFloat(ammountIn.value);
   lblTG.textContent = `$${totalGastado}`;
+  lblTG.style.fontWeight = 'bold';
 
   expensesQty++
   promedio = totalGastado / expensesQty;
   lblProm.textContent = `$${promedio}`;
+  lblProm.style.fontWeight = 'bold';
 
   expenseDateIn.value = '';
   descriptionIn.value = '';

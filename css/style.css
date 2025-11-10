@@ -1,6 +1,89 @@
 body {
   font-family: sans-serif;
-}  
+  margin: 0;
+  padding: 15px;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+}
+
+h3 {
+  margin: 0;
+}
+
+#addBtns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+#addBtns button {
+  background-color: #5cb85c;
+  border: none;
+  color: white;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+table {
+  table-layout: fixed;
+  width: 90%;
+  margin: 10px auto;
+  border-collapse: collapse;
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+}
+
+th, td {
+  vertical-align: center;
+  padding: 0.3em;
+}
+
+th:nth-child(4), td:nth-child(4) {
+  text-align: right;
+}
+
+th:not(:nth-child(4)), td:not(:nth-child(4)) {
+  text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #eeeeee;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+}
 
 dialog {
   padding: 0;
@@ -76,4 +159,15 @@ input, select {
   padding: 8px;
   border-radius: 8px;
   border: 1px solid lightgray;
+}
+
+#resumen {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: lightgray;
+  width: 90%;
+  border-radius: 8px;
+  padding: 15px;
+  margin: auto;
 }
