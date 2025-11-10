@@ -5,11 +5,9 @@ const budgetForm = document.querySelector('#budgetForm');
 const lblPres = document.querySelector('#lblPresupuesto');
 const lblTG = document.querySelector('#lblTG');
 const lblProm = document.querySelector('#lblProm');
-const expensesModal = document.querySelector('#expensesModal');
-const budgetModal = document.querySelector('#budgetModal');
 const expensesTable = document.querySelector('table');
-const btnCancel = document.querySelector('.cancelBtn');
-const anyModal = document.querySelector('.modal');
+const budgetDialog = document.querySelector('#budgetDialog');
+const expensesDialog = document.querySelector('#expensesDialog');
 
 let presupuesto = 0;
 let totalGastado = 0;
@@ -31,32 +29,33 @@ function addRow(inData) {
 
 }
 
-btnCancel.addEventListener('click', () => {
-  anyModal.classList.remove('show');
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('btnCancel')) {
+    const dialog = e.target.closest('dialog');
+    if (dialog) {
+      dialog.close();
+    }
+  }
 });
 
-btnPresupuesto.addEventListener('click', () => {
-  budgetModal.classList.add('show');
+btnPresupuesto.addEventListener('click', (e) => {
+  budgetDialog.showModal();
 });
 
 btnGasto.addEventListener('click', () => {
-  expensesModal.classList.add('show');
+  expensesDialog.showModal();
 });
 
 budgetForm.addEventListener('submit', (event) => {
-  event.preventDefault();
   const budgetAmt = document.querySelector('#budgetAmt');
+
   presupuesto = budgetAmt.value;
   lblPres.textContent = `$${presupuesto}`;
   btnPresupuesto.disabled = true;
   btnGasto.disabled = false;
-  budgetModal.classList.remove('show');
 });
 
 expenseForm.addEventListener('submit', (event) => {
-
-  // dont refresh the webpage after submitting.
-  event.preventDefault();
 
   let expenseDateIn = document.querySelector('#expenseDate');
   let descriptionIn = document.querySelector('#expenseDescription');
@@ -83,7 +82,5 @@ expenseForm.addEventListener('submit', (event) => {
   descriptionIn.value = '';
   categoryIn.value = '';
   ammountIn.value = '';
-
-  expensesModal.classList.remove('show');
 
 });

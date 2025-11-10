@@ -2,32 +2,16 @@ body {
   font-family: sans-serif;
 }  
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+dialog {
+  padding: 0;
 }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+form {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.modal.show {
-  display: block;
+  justify-content: center;
+  gap: 15px;
 }
 
 #modal-header {
@@ -42,18 +26,15 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-}
-
-#modal-column {
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 0 20px;
 }
 
 #modal-footer {
+  font-family: sans-serif;
   display: flex;
   justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .modalBtn {
