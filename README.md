@@ -19,7 +19,3 @@
 - Categoria
 - Seccion de resumen
 - CSS aparte del index, en su propia carpeta
-
-
-
-![Under construction](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-PrIZ1jLPfKDXi4jF9u47nnLuOZJzSsN_Zw&s)
