@@ -38,7 +38,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
-btnPresupuesto.addEventListener('click', (e) => {
+btnPresupuesto.addEventListener('click', () => {
   budgetDialog.showModal();
 });
 
@@ -46,7 +46,7 @@ btnGasto.addEventListener('click', () => {
   expensesDialog.showModal();
 });
 
-budgetForm.addEventListener('submit', (event) => {
+budgetForm.addEventListener('submit', () => {
   const budgetAmt = document.querySelector('#budgetAmt');
 
   presupuesto = budgetAmt.value;
@@ -55,7 +55,7 @@ budgetForm.addEventListener('submit', (event) => {
   btnGasto.disabled = false;
 });
 
-expenseForm.addEventListener('submit', (event) => {
+expenseForm.addEventListener('submit', () => {
 
   let expenseDateIn = document.querySelector('#expenseDate');
   let descriptionIn = document.querySelector('#expenseDescription');
