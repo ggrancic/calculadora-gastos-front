@@ -1,98 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Calculadora de gasto</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="script.js" defer></script>
-  <link rel="stylesheet" href="css/style.css">
-  <title>Calculadora de gasto</title>
-</head>
+  <body>
+    <div class="container">
+      <h1>Calculadora de Gastos</h1>
+      <button type="button" id="btnPresupuesto">Crear presupuesto</button>
+      <div id="addBtns">
+        <button type="button" id="btnGasto" disabled>Agregar Gasto</button>
+      </div>
+      <table>
+        <th>Fecha</th>
+        <th>Descripcion</th>
+        <th>Categoria</th>
+        <th>Monto</th>
+      </table>
 
-<body>
-  <div class="container">
-    <h1>Calculadora de Gastos</h1>
-    <button type="button" id="btnPresupuesto">Crear presupuesto</button>
-    <div id="addBtns">
-      <button type="button" id="btnGasto" disabled>Agregar Gasto</button>
+      <div id="resumen">
+        <h3>Resumen</h3>
+        <ul>
+          <li>
+            <span>Presupuesto</span>
+            <span id="lblPresupuesto"></span>
+          </li>
+          <li>
+            <span>Total gastado</span>
+            <span id="lblTG"></span>
+          </li>
+          <li>
+            <span>Promedio</span>
+            <span id="lblProm"></span>
+          </li>
+        </ul>
+      </div>
     </div>
-    <table>
-      <th>Fecha</th>
-      <th>Descripcion</th>
-      <th>Categoria</th>
-      <th>Monto</th>
-    </table>
 
+    <dialog id="budgetDialog">
+      <form id="budgetForm" method="dialog">
+        <div id="modal-header">
+          <h2>Ingresa el presupuesto máximo</h2>
+        </div>
+        <div id="modal-body">
+          <label for="budgetAmt">Monto</label>
+          <input
+            type="text"
+            name="budgetAmt"
+            id="budgetAmt"
+            placeholder="$0.00"
+            required
+          />
+        </div>
+        <div id="modal-footer">
+          <button type="submit">Guardar</button>
+          <button type="button" class="btnCancel">No Guardar</button>
+        </div>
+      </form>
+    </dialog>
 
-    <div id="resumen">
-      <h3>Resumen</h3>
-      <ul>
-        <li>
-          <span>Presupuesto</span>
-          <span id="lblPresupuesto"></span>
-        </li>
-        <li>
-          <span>Total gastado</span>
-          <span id="lblTG"></span>
-        </li>
-        <li>
-          <span>Promedio</span>
-          <span id="lblProm"></span>
-        </li>
-      </ul>
-    </div>
+    <dialog id="expensesDialog">
+      <form id="expenseForm" method="dialog">
+        <div id="modal-header">
+          <h2>Nuevo Gasto</h2>
+        </div>
+        <div id="modal-body">
+          <label for="expenseDate">Fecha</label>
+          <input type="date" id="expenseDate" required />
 
-  </div>
-  
-  <dialog id="budgetDialog">
-  <form id="budgetForm" method="dialog">
-    <div id="modal-header">
-      <h2>Ingresa el presupuesto máximo</h2>
-    </div>
-    <div id="modal-body">
-      <label for="budgetAmt">Monto</label>
-      <input type="text" name="budgetAmt" id="budgetAmt" placeholder="$0.00" required>
-    </div>
-    <div id="modal-footer">
-      <button type="submit">Guardar</button>
-      <button type="button" class="btnCancel">No Guardar</button>
-    </div>
-  </form>
-  </dialog>
+          <label for="expenseDescription">Descripcion</label>
+          <input
+            type="text"
+            id="expenseDescription"
+            minlength="2"
+            maxlength="20"
+            placeholder="Ej: pagar luz, delivery, etc."
+            required
+          />
 
-  <dialog id="expensesDialog">
-  <form id="expenseForm" method="dialog">
-    <div id="modal-header">
-      <h2>Nuevo Gasto</h2>
-    </div>
-    <div id="modal-body">
-      <label for="expenseDate">Fecha</label>
-      <input type="date" id="expenseDate" required>
+          <label for="expenseCategory">Categoria</label>
 
-      <label for="expenseDescription">Descripcion</label>
-      <input type="text" id="expenseDescription" minlength="2" maxlength="20"
-        placeholder="Ej: pagar luz, delivery, etc." required>
+          <select id="combo" required>
+            <option value="">--Selecciona la categoria--</option>
+            <option value="transporte">Transporte</option>
+            <option value="expensas">Expensas</option>
+            <option value="comida">Comida</option>
+            <option value="otros">Otros</option>
+          </select>
 
-      <label for="expenseCategory">Categoria</label>
-
-      <select id="combo" required>
-        <option value="">--Selecciona la categoria--</option>
-        <option value="transporte">Transporte</option>
-        <option value="expensas">Expensas</option>
-        <option value="comida">Comida</option>
-        <option value="otros">Otros</option>
-      </select>
-
-      <label for="expenseAmt">Monto</label>
-      <input type="number" id="expenseAmt" min="1" placeholder="$0.00" required>
-    </div>
-    <div id="modal-footer">
-      <button type="submit">Guardar</button>
-      <button type="button" class="btnCancel">No Guardar</button>
-    </div>
-  </form>
-  </dialog>
-
-</body>
-
+          <label for="expenseAmt">Monto</label>
+          <input
+            type="number"
+            id="expenseAmt"
+            min="1"
+            placeholder="$0.00"
+            required
+          />
+        </div>
+        <div id="modal-footer">
+          <button type="submit">Guardar</button>
+          <button type="button" class="btnCancel">No Guardar</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
 </html>
